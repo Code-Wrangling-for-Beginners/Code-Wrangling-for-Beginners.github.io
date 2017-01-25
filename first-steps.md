@@ -5,7 +5,9 @@ layout: seminar
 {::options parse_block_html="true" /}
 
 # Code Wrangling for Beginners
+
 ## First Steps
+
 Welcome to the first seminar's material.  Here you'll be taking your first steps in the journey of programming.
 
 
