@@ -1,0 +1,32 @@
+---
+layout: home
+---
+h1. Seminars and practical
+
+This is some
+
+# now
+## in
+# thee
+# winter
+
+* list
+* thiss
+
+{%highlight processing  %}
+void draw()
+{
+    if (mouseX) {
+
+    }
+}
+{%endhighlight %}
+<pre><code>
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+}
+</code>
+</pre>
+
+{%include list.html %}
+# NOW THEN
