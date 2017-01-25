@@ -5,21 +5,17 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-img.figure {
-    float:right;
-}
-
 
 pre {
     font-family: 'Source Code Pro', monospace;
 }
 
 .alert {
-    margin-right:150px;
     background: hsl(205, 21%, 89%);
     border-width: 0px 2px 0px 10px;
     border-style: solid;
     padding-left: 0.5em;
+    overflow: auto;
 }
 .processing { border-color: hsl(206, 100%, 15%); }
 .example    { border-color: hsl(175,98%,23%); }
@@ -27,3 +23,12 @@ pre {
 .warning    { border-color: hsl(29,100%,50%); }
 .danger     { border-color: hsl(351,100%,45%); }
 .question   { border-color: rgb(0, 191, 255); }
+
+section {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+code {
+    font-family: 'Source Sans Pro', sans-serif;
+}
