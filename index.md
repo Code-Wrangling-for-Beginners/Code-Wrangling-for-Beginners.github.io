@@ -4,18 +4,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
-{% highlight java  %}
-void draw()
-{
-    if (mouseX) {
-
-    }
-}
-{% endhighlight %}
-
-<pre><code>
-<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
-{
-}
-</code>
-</pre>
+This a collection of material used in the university course,
+"Code Wrangling for Beginners", in the School of Computer Science, at Northumbria University.
