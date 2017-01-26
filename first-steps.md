@@ -48,13 +48,19 @@ If you having problems in the next exercises then you might find a procedure cal
 
 You use it like this 
 <pre>
-Int x = 4 ; 
+int x = 4 ; 
 
 println( 4 ); 
 println( x ) ; 
-println(“Message” ) ; 
+println("Message"  ) ; 
 println( 4 + 5 ); 
+println( x + 4 ) ; 
+println( x * 3 + 5 / 2 - 1 ) ; 
+println( true && false ) ; // &&  means AND  
+println( true || false ) ; // || means OR 
+println(!true ) ; 
 </pre>
+see (https://processing.org/reference/println_.html) for more information 
 
 
 # Interaction
