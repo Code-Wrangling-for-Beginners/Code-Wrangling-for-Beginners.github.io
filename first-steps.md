@@ -42,30 +42,34 @@ I find the following pages on Wikipedia useful for finding values to use for the
   * [List of Crayola crayon colors](https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors)
 </section>
 
-# Useful things 
+# Useful things
 
-If you having problems in the next exercises then you might find a procedure called  println() helpful. 
+If you having problems in the next exercises then you might find a procedure called  `println()` helpful.
 
-You use it like this 
-<pre>
-int x = 4 ; 
+You use it like this
+<section class="alert processing"><pre>
+<span style="color: #E2661A;">int</span> x = 4 ;
 
-println( 4 ); 
-println( x ) ; 
-println("Message"  ) ; 
-println( 4 + 5 ); 
-println( x + 4 ) ; 
-println( x * 3 + 5 / 2 - 1 ) ; 
-println( true && false ) ; // &&  means AND  
-println( true || false ) ; // || means OR 
-println(!true ) ; 
+<span style="color: #006699;">println</span>( 4 );
+<span style="color: #006699;">println</span>( x ) ;
+<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Message&quot;</span>  ) ;
+<span style="color: #006699;">println</span>( 4 + 5 );
+<span style="color: #006699;">println</span>( x + 4 ) ;
+<span style="color: #006699;">println</span>( x * 3 + 5 / 2 - 1 ) ;
+<span style="color: #006699;">println</span>( <span style="color: #33997E;">true</span> &amp;&amp; <span style="color: #33997E;">false</span> ) ; <span style="color: #666666;">// &amp;&amp;  means AND  </span>
+<span style="color: #006699;">println</span>( <span style="color: #33997E;">true</span> || <span style="color: #33997E;">false</span> ) ; <span style="color: #666666;">// || means OR</span>
+<span style="color: #006699;">println</span>(!<span style="color: #33997E;">true</span> ) ;
 </pre>
-It writes what ever is between the round brackets out into the console ( the black box at the bottom of the screen). 
-see (https://processing.org/reference/println_.html) for more information 
+</section>
+
+It writes what ever is between the round brackets out into the console ( the black box at the bottom of the screen).
+see (https://processing.org/reference/println_.html) for more information
 
 
 # Interaction
+
 ### Changing the way things happen
+
 You may want to review the role of the [`setup()`](https://processing.org/reference/setup_.html) and [`draw()`](https://processing.org/reference/draw_.html) functions before continuing.
 
 We can make the behaviour change in response to input from the user:
