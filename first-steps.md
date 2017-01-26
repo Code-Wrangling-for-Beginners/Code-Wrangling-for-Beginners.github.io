@@ -60,6 +60,7 @@ println( true && false ) ; // &&  means AND
 println( true || false ) ; // || means OR 
 println(!true ) ; 
 </pre>
+It writes what ever is between the round brackets out into the console ( the black box at the bottom of the screen). 
 see (https://processing.org/reference/println_.html) for more information 
 
 
