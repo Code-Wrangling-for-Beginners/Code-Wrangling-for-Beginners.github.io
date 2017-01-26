@@ -41,7 +41,21 @@ I find the following pages on Wikipedia useful for finding values to use for the
   * [List of colors by shade](https://en.wikipedia.org/wiki/List_of_colors_by_shade)
   * [List of Crayola crayon colors](https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors)
 </section>
+
 # Useful things 
+
+If you having problems in the next exercises then you might find a procedure called  println() helpful. 
+
+You use it like this 
+<pre>
+Int x = 4 ; 
+
+println( 4 ); 
+println( x ) ; 
+println(“Message” ) ; 
+println( 4 + 5 ); 
+</pre>
+
 
 # Interaction
 ### Changing the way things happen
