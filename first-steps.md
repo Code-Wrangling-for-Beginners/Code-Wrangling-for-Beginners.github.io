@@ -41,6 +41,8 @@ I find the following pages on Wikipedia useful for finding values to use for the
   * [List of colors by shade](https://en.wikipedia.org/wiki/List_of_colors_by_shade)
   * [List of Crayola crayon colors](https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors)
 </section>
+# Useful things 
+
 # Interaction
 ### Changing the way things happen
 You may want to review the role of the [`setup()`](https://processing.org/reference/setup_.html) and [`draw()`](https://processing.org/reference/draw_.html) functions before continuing.
