@@ -1,4 +1,4 @@
-/* @pjs preload="assets/Processing_logo.png"; */
+/* @pjs preload="assets/Processing_Logo.png"; */
 PImage I = loadImage("assets/Processing_Logo.png");
 translate(25,25);
 rotate(radians(45));
