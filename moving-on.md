@@ -69,3 +69,7 @@ Try the following example:
 <section class="alert question">
 </section>
 <img src="assets/anim02.gif" style="float:right">
+and
+<canvas data-processing-sources="assets/animex01.pde"></canvas>
+the end
+{% include sketch.html sketch="imageEx" %}
