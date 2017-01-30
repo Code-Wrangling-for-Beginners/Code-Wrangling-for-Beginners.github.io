@@ -67,9 +67,9 @@ Try the following example:
 </section>
 
 <section class="alert question">
-</section>
 <img src="assets/anim02.gif" style="float:right">
 and
 <canvas data-processing-sources="assets/animex01.pde"></canvas>
+</section>
 the end
-{% include sketch.html sketch="imageEx" %}
+{% include processing.html name="monte_carlo" %}

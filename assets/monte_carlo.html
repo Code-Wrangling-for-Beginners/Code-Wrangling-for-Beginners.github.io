@@ -1,0 +1,38 @@
+<html><body><pre>
+<span style="color: #E2661A;">int</span> rule = 200;
+
+<span style="color: #E2661A;">int</span> total = 0;
+<span style="color: #E2661A;">int</span> inner = 0;
+<span style="color: #E2661A;">float</span> p ;
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(200,200);
+}
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">color</span> c;
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> x = <span style="color: #006699;">random</span>(rule);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> y = <span style="color: #006699;">random</span>(rule);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> l = <span style="color: #006699;">dist</span>(0,0,x,y);
+&nbsp;&nbsp;total++;
+&nbsp;&nbsp;<span style="color: #669900;">if</span>(l&lt;rule)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;inner++;
+&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;=&nbsp;#ff0000;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #669900;">else</span>
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;=&nbsp;#0000ff;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(c);
+&nbsp;&nbsp;<span style="color: #006699;">point</span>(x,y);
+&nbsp;&nbsp;p&nbsp;=&nbsp;<span style="color: #006699;">float</span>(inner)/<span style="color: #006699;">float</span>(total)*4.0;
+&nbsp;&nbsp;<span style="color: #006699;">textSize</span>(14);
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(211);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(10,50,90,-10);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>( <span style="color: #006699;">nf</span>(p,1,9),10,50);
+}
+
+</pre></body></html>
