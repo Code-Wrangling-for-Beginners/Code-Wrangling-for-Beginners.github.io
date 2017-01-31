@@ -1,6 +1,6 @@
 
 <section class="alert processing">
-    {% capture name %}{{include.name}}{% endcapture %}
+    {% capture name %}{{include.sketch}}{% endcapture %}
 {% include sketch.html sketch=name %}{: style="float:right"}
-{% include {{include.name}}.html %}
+{% include {{include.sketch}}.html %}
 </section>

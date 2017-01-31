@@ -46,30 +46,97 @@ while remembering the important information from frame to frame.
 </section>
 
 Try the following example:
-<section markdown="0" class="alert processing">
-<img src="assets/animation01.gif" style="float:right">
-<pre>
-<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
-{
-&nbsp;&nbsp;<span style="color: #006699;">size</span>(200,400);
-}
+{% include processing.html sketch="anim_eg_01" %}
 
-<span style="color: #E2661A;">float</span> x = 0;
-<span style="color: #E2661A;">float</span> y = 0;
-<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
-{
-&nbsp;&nbsp;<span style="color: #006699;">background</span>(204);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(x,y,5,5);
-&nbsp;&nbsp;x&nbsp;=&nbsp;x&nbsp;+&nbsp;1;
-&nbsp;&nbsp;y&nbsp;=&nbsp;x*x/100;
-}
-</pre>
+<section class="alert question">
+### Questions?
+ 1. Can you see what the equivalent `for()` loop would be?
+ 2. What happens if you remove the `ìf` statement?
+ 3. Why is the `ìf` statement written on one line?
+</section>
+
+Look over the notes on how [map](https://processing.org/reference/map_.html) works.  
+
+<section class="alert question">
+What would values would you use for using map to convert between:
+ 1. Celsius to Fahrenheit?
+ 2. Kelvin to Celsius?
+ 3. Light-years to Astronomical-Units?
+ 4. Astronomical-Units to <span title="For the purpose of drawing the solar system on the screen">screen coordinates</span>?
+ 5. Turns to radians?
+</section>
+
+# Animation skeleton
+For animations we want to use a skeleton
+[<code style="color: #006699;"><b>setup</b></code>()](https://processing.org/reference/setup_.html)
+can be used to
+select a size for the window the program creates. The [**`draw`**`()`](https://processing.org/reference/draw_.html){: style="color:#069"} function
+is called each time the screen refreshes. The
+ [**`background`**()](https://processing.org/reference/background_.html){: style="color:#069"}
+ function
+clears the window so the last frame is not visible.
+
+<section class="alert processing">
+<a href="assets/skeleton/skeleton.pde">skeleton.pde</a>
+{% include skeleton.html %}
+</section>
+
+
+# A Pendulum
+A simple [pendulum](http://en.wikipedia.org/wiki/Pendulum)
+swinging freely from a pivot point can be
+approximated by [simple harmonic motion](http://en.wikipedia.org/wiki/Simple_harmonic_motion)
+
+## Appearance
+We can set up our solution by using the pattern where we have a
+function that draws the pendulum, and use the [**`translate`**()](https://processing.org/reference/translate_.html){: style="color:#069"}/[**`rotate`**()](https://processing.org/reference/rotate_.html){: style="color:#069"}
+mechanism to move the pendulum.
+
+<section class="alert note">
+This pattern of separating out the
+appearance and motion, is a very
+common and useful technique to use.
+</section>
+
+<section class="alert processing">
+{% include pendulum01.html %}
 </section>
 
 <section class="alert question">
-<img src="assets/anim02.gif" style="float:right">
-and
-<canvas data-processing-sources="assets/animex01.pde"></canvas>
+## Exercise: 1
+Add the drawing code to draw the pendulum
+Remember that the pivot point is at (0, 0).
 </section>
-the end
-{% include processing.html name="monte_carlo" %}
+
+<section class="alert example">
+{% include sketch.html sketch="bob" %}{: style="float:right"}
+{% include bob.html %}
+</section>
+
+## Motion
+
+We can now turn our attention to the motion. So in
+[**`draw`**`()`](https://processing.org/reference/draw_.html){: style="color:#069"}
+ we now
+need to have
+
+<section class="alert processing">
+<pre>
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> angle = motion();
+</pre>
+</section>
+
+If we were to look up the equation for the movement, we’d get
+something like:
+
+$$
+\Theta(t) = \Theta_0\sin\left(\frac{2\pi t}{T}\right)
+$$
+
+_**We can avoid much of the maths**_ &nbsp; by carefully using the functions
+in Processing.
+The first step is to get the information we know, into the program
+in a convenient form for us. We know the period – the time to make
+one complete swing, in seconds; and the amplitude – the maximum
+angle the pendulum swings away from the vertical in degrees. We
+can add these to the top of the program (before [<code style="color: #006699;"><b>setup</b></code>()](https://processing.org/reference/setup_.html))

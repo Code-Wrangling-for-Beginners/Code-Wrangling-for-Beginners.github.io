@@ -1,0 +1,18 @@
+<html><body><pre>
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(200, 400);
+}
+
+<span style="color: #E2661A;">float</span> x = 0;
+<span style="color: #E2661A;">float</span> y = 0;
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(204);
+&nbsp;&nbsp;<span style="color: #669900;">if</span> ( x&gt;<span style="color: #D94A7A;">width</span> ) { x = 0; }
+&nbsp;&nbsp;x&nbsp;=&nbsp;x+1;
+&nbsp;&nbsp;y&nbsp;=&nbsp;x*x/100;
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(x, y, 5, 5);
+}
+
+</pre></body></html>
