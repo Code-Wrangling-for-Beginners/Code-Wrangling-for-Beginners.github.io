@@ -1,6 +1,12 @@
 
 <section class="alert processing">
+<<<<<<< HEAD
     {% capture name %}{{include.sketch}}{% endcapture %}
 {% include sketch.html sketch=name %}{: style="float:right"}
 {% include {{include.sketch}}.html %}
+=======
+    {% capture name %}{{include.name}}{% endcapture %}
+{% include sketch.html sketch=name %}
+{% include {{include.name}}.html %}
+>>>>>>> origin/master
 </section>
