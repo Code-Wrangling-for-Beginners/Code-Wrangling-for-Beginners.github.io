@@ -140,3 +140,9 @@ in a convenient form for us. We know the period – the time to make
 one complete swing, in seconds; and the amplitude – the maximum
 angle the pendulum swings away from the vertical in degrees. We
 can add these to the top of the program (before [<code style="color: #006699;"><b>setup</b></code>()](https://processing.org/reference/setup_.html))
+
+<section class="alert processing">
+<pre>
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> angle = motion();
+</pre>
+</section>
