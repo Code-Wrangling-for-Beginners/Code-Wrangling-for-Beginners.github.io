@@ -46,7 +46,7 @@ while remembering the important information from frame to frame.
 </section>
 
 Try the following example:
-{% include processing.html sketch="anim_eg_01" %}
+{% include processing.html name="anim_eg_01" %}
 
 <section class="alert question">
 ### Questions?

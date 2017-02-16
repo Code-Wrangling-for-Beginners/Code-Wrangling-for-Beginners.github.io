@@ -1,0 +1,35 @@
+<html><body><pre>
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{&nbsp;
+&nbsp;&nbsp;<span style="color: #006699;">size</span>( 350,350);
+}&nbsp;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">int</span> n=0;
+&nbsp;&nbsp;<span style="color: #006699;">translate</span>(10,20);
+&nbsp;&nbsp;<span style="color: #669900;">for</span>(<span style="color: #E2661A;">int</span> x=0; x&lt;<span style="color: #D94A7A;">width</span> ; x+=70) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">for</span>(<span style="color: #E2661A;">int</span> y=0 ; y&lt;<span style="color: #D94A7A;">height</span> ; y+=70) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;houseat(x,y,++n);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+}
+
+<span style="color: #33997E;">void</span> houseat(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span>  n)
+{
+&nbsp;&nbsp;<span style="color: #006699;">pushMatrix</span>();
+&nbsp;&nbsp;<span style="color: #006699;">translate</span>(x,y);
+&nbsp;&nbsp;house(n);
+&nbsp;&nbsp;<span style="color: #006699;">popMatrix</span>();
+}
+
+<span style="color: #33997E;">void</span> house(<span style="color: #E2661A;">int</span> n)
+{&nbsp;
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255);
+&nbsp;&nbsp;<span style="color: #006699;">triangle</span>( 0,0, 60, 0 , 30, -15);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>( 0,0, 60 , 50 ) ;
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">textSize</span>(20);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #006699;">str</span>(n), 20, 25);
+}&nbsp;
+</pre></body></html>
