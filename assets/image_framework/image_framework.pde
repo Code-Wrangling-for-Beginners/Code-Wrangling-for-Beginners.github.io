@@ -3,10 +3,11 @@ color generatePixel(int x, int y, int w, int h)
   return 0;
 }
 
-PImage picture = createImage(100,100,RGB);
+PImage picture;
 
 void setup()
 {
+  picture = createImage(width,height,RGB);
   picture = generatePicture(picture);
 }
 

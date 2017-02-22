@@ -15,12 +15,13 @@ color generatePixel(int x, int y, int w, int h)
   return palette.pixels[n];
 }
 
-PImage picture = createImage(400,400,RGB);
+PImage picture;
 PImage palette;
 
 void setup()
 {
   size(400,400);
+  picture = createImage(width,height,RGB);
   palette = loadImage("assets/visspec.png");
   palette.loadPixels();
 

@@ -14,11 +14,12 @@ color generatePixel(int x, int y, int w, int h)
   return color(255-n);
 }
 
-PImage picture = createImage(700,400,RGB);
+PImage picture;
 
 void setup()
 {
   size(700,400);
+  picture = createImage(width,height,RGB);
   picture = generatePicture(picture);
 }
 

@@ -1,0 +1,9 @@
+<html><body><pre>
+<span style="color: #E2661A;">color</span> generatePixel(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span> w, <span style="color: #E2661A;">int</span> h)
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> u = <span style="color: #006699;">map</span>(x, 0, w, 0, 4);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> v = <span style="color: #006699;">map</span>(y, 0, h, 0, 4);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> n = <span style="color: #006699;">noise</span>(u,v);
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #006699;">color</span>(n*255);
+}
+</pre></body></html>

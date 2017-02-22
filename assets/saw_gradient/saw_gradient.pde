@@ -4,10 +4,11 @@ color generatePixel(int x, int y, int w, int h)
   return lerpColor(color(0),color(255,0,0), u);
 }
 
-PImage picture = createImage(100,100,RGB);
+PImage picture;
 
 void setup()
 {
+  picture = createImage(width,height,RGB);
   picture = generatePicture(picture);
 }
 

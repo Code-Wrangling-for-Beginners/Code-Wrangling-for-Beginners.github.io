@@ -1,0 +1,29 @@
+<pre>
+<span style="color: #E2661A;">color</span> generatePixel(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span> w, <span style="color: #E2661A;">int</span> h)
+{
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #006699;">color</span>(0);
+}
+
+<span style="color: #E2661A;">PImage</span> picture;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{
+&nbsp;&nbsp;picture = <span style="color: #006699;">createImage</span>(<span style="color: #D94A7A;">width</span>,<span style="color: #D94A7A;">height</span>,<span style="color: #718A62;">RGB</span>);
+&nbsp;&nbsp;picture&nbsp;=&nbsp;generatePicture(picture);
+}
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">image</span>(picture,0,0);
+}
+
+<span style="color: #E2661A;">PImage</span> generatePicture(<span style="color: #E2661A;">PImage</span> pic)
+{
+&nbsp;&nbsp;pic.<span style="color: #006699;">loadPixels</span>();
+&nbsp;&nbsp;<span style="color: #669900;">for</span>(<span style="color: #E2661A;">int</span> i=0; i&lt;pic.<span style="color: #D94A7A;">pixels</span>.<span style="color: #33997E;">length</span> ; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;pic.<span style="color: #D94A7A;">pixels</span>[i] = generatePixel(i%pic.<span style="color: #D94A7A;">width</span>, i/pic.<span style="color: #D94A7A;">width</span>,pic.<span style="color: #D94A7A;">width</span>, pic.<span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;pic.<span style="color: #006699;">updatePixels</span>();
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> pic;
+}
+</pre>

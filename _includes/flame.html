@@ -1,0 +1,40 @@
+<html><body><pre>
+<span style="color: #E2661A;">color</span> generatePixel(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span> w, <span style="color: #E2661A;">int</span> h)
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> u = <span style="color: #006699;">map</span>(x, 0, w, -2, 2);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> v = <span style="color: #006699;">map</span>(y, 0, h, 1, 0);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> f = <span style="color: #D94A7A;">frameCount</span>*0.05;
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> q = <span style="color: #006699;">lerp</span>(-1,1, <span style="color: #006699;">noise</span>(u/2,v*2-f,f));
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> p = (1-v)*(<span style="color: #006699;">exp</span>(-<span style="color: #006699;">sq</span>(u*2+q)));
+&nbsp;&nbsp;<span style="color: #E2661A;">int</span> n = <span style="color: #006699;">int</span>(p*(palette.<span style="color: #D94A7A;">width</span>));
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> palette.<span style="color: #D94A7A;">pixels</span>[n];
+}
+
+<span style="color: #E2661A;">PImage</span> picture;
+<span style="color: #E2661A;">PImage</span> palette;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(300, 400);
+&nbsp;&nbsp;palette&nbsp;=&nbsp;<span style="color: #006699;">loadImage</span>(<span style="color: #7D4793;">&quot;Hot.png&quot;</span>);
+&nbsp;&nbsp;picture&nbsp;=&nbsp;<span style="color: #006699;">createImage</span>(<span style="color: #D94A7A;">width</span>, <span style="color: #D94A7A;">height</span>, <span style="color: #718A62;">RGB</span>);
+&nbsp;&nbsp;picture&nbsp;=&nbsp;generatePicture(picture);
+}
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;picture&nbsp;=&nbsp;generatePicture(picture);
+&nbsp;&nbsp;<span style="color: #006699;">image</span>(picture, 0, 0);
+}
+
+<span style="color: #E2661A;">PImage</span> generatePicture(<span style="color: #E2661A;">PImage</span> pic)
+{
+&nbsp;&nbsp;pic.<span style="color: #006699;">loadPixels</span>();
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> i=0; i&lt;pic.<span style="color: #D94A7A;">pixels</span>.<span style="color: #33997E;">length</span>; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;pic.<span style="color: #D94A7A;">pixels</span>[i] = generatePixel(i%pic.<span style="color: #D94A7A;">width</span>, i/pic.<span style="color: #D94A7A;">width</span>, pic.<span style="color: #D94A7A;">width</span>, pic.<span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;pic.<span style="color: #006699;">updatePixels</span>();
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> pic;
+}
+
+</pre></body></html>

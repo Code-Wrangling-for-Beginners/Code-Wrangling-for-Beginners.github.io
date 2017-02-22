@@ -11,35 +11,8 @@ Much of the code needed to create images is pretty much the same.  We can write 
 
 The skeleton sketch is:
 <section class="alert processing">
-<pre>
-<span style="color: #E2661A;">color</span> generatePixel(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span> w, <span style="color: #E2661A;">int</span> h)
-{
-&nbsp;&nbsp;<span style="color: #33997E;">return</span> 0;
-}
-
-<span style="color: #E2661A;">PImage</span> picture;
-
-<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
-{
-&nbsp;&nbsp;picture = <span style="color: #006699;">createImage</span>(<span style="color: #D94A7A;">width</span>,<span style="color: #D94A7A;">height</span>,<span style="color: #718A62;">RGB</span>);
-&nbsp;&nbsp;picture&nbsp;=&nbsp;generatePicture(picture);
-}
-
-<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
-{
-&nbsp;&nbsp;<span style="color: #006699;">image</span>(picture,0,0);
-}
-
-<span style="color: #E2661A;">PImage</span> generatePicture(<span style="color: #E2661A;">PImage</span> pic)
-{
-&nbsp;&nbsp;pic.<span style="color: #006699;">loadPixels</span>();
-&nbsp;&nbsp;<span style="color: #669900;">for</span>(<span style="color: #E2661A;">int</span> i=0; i&lt;pic.<span style="color: #D94A7A;">pixels</span>.<span style="color: #33997E;">length</span> ; i++) {
-&nbsp;&nbsp;&nbsp;&nbsp;pic.<span style="color: #D94A7A;">pixels</span>[i] = generatePixel(i%pic.<span style="color: #D94A7A;">width</span>, i/pic.<span style="color: #D94A7A;">width</span>,pic.<span style="color: #D94A7A;">width</span>, pic.<span style="color: #D94A7A;">height</span>);
-&nbsp;&nbsp;}
-&nbsp;&nbsp;pic.<span style="color: #006699;">updatePixels</span>();
-&nbsp;&nbsp;<span style="color: #33997E;">return</span> pic;
-}
-</pre></section>
+{% include image_skeleton.html %}
+</section>
 The key part is the function
 <section class="alert processing"><pre>
 <span style="color: #E2661A;">color</span> generatePixel(<span style="color: #E2661A;">int</span> x, <span style="color: #E2661A;">int</span> y, <span style="color: #E2661A;">int</span> w, <span style="color: #E2661A;">int</span> h)</pre></section>
@@ -69,6 +42,46 @@ In all the following examples, I'm only going to show you the <code>generatePixe
 <section class="alert note">
 In the recipes below I'll often need to convert coordinate system from (_x_,_y_) to (_u_,_v_).  The (_u_,_v_) coordinates are often used in image processing and manipulation.
 </section>
+
+## Make Some Noise
+<section class="alert processing">
+{% include sketch.html sketch="noise" %}
+{% include noise.html %}
+</section>
+The `noise` function calculates a thing called "Perlin Noise", named after the Computer Scentist _Ken Perlin_ who first developed it.
+
+<section class="alert note">
+Ken Perlin's noise function has become widely used in the process of creating images and graphics for the CGI industry and special effects.  So much so, that he has been awarded an
+[Oscar](https://cs.nyu.edu/~perlin/doc/oscar.html)
+for his contributions to the field.
+> To Ken Perlin for the development of Perlin Noise, a technique used to produce natural appearing textures on computer generated surfaces for motion picture visual effects.
+
+</section>
+
+If we take a simple pattern of stripes
+<section class="alert processing">
+{% include sketch.html sketch="sinetexture" %}
+{% include sinetexture.html %}
+</section>
+Then add some noise
+<section class="alert processing">
+{% include sketch.html sketch="sinetexturenoise" %}
+{% include sinetexturenoise.html %}
+</section>
+We get something looking like [wood grain](http://paulbourke.net/texture_colour/displayimage.cgi?woodgrain/japaneseash.jpg)
+
+With a different set of operations
+<section class="alert processing">
+{% include sketch.html sketch="sinetexturenoise2" %}
+{% include sinetexturenoise2.html %}
+</section>
+
+If instead we recreate the image for each frame, with a different set of operations we get...
+<section class="alert processing">
+{% include sketch.html sketch="flame" %}
+{% include flame.html %}
+</section>
+
 
 ## Gradients
 
@@ -185,8 +198,4 @@ The Visible Spectrum
 <section class="alert processing">
 {% include sketch.html sketch="mandelbrot_set_colour" %}
 {% include mandelbrot_set_colour.html %}
-</section>
-
-<section class="alert processing">
-{% include sketch.html sketch="noise" %}
 </section>
