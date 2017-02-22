@@ -1,8 +1,8 @@
 /* @pjs preload="assets/visspec.png"; */
 color generatePixel(int x, int y, int w, int h)
 {
-  float u = map(x, 0,w, 0.35,0.45);
-  float v = map(y, 0,h, 0.25,0.35);
+  float u = map(x, 0,w, 0.375,0.4);
+  float v = map(y, 0,h, 0.25,0.275);
   int n=0;
   float cx = 0.0;
   float cy = 0.0;
@@ -16,13 +16,15 @@ color generatePixel(int x, int y, int w, int h)
 }
 
 PImage picture = createImage(400,400,RGB);
-PImage palette = loadImage("assets/visspec.png");
+PImage palette;
 
 void setup()
 {
   size(400,400);
-  picture = generatePicture(picture);
+  palette = loadImage("assets/visspec.png");
   palette.loadPixels();
+
+  picture = generatePicture(picture);
 }
 
 void draw()

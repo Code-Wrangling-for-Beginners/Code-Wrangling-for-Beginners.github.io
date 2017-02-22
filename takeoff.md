@@ -17,10 +17,11 @@ The skeleton sketch is:
 &nbsp;&nbsp;<span style="color: #33997E;">return</span> 0;
 }
 
-<span style="color: #E2661A;">PImage</span> picture = <span style="color: #006699;">createImage</span>(100,100,<span style="color: #718A62;">RGB</span>);
+<span style="color: #E2661A;">PImage</span> picture;
 
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
 {
+&nbsp;&nbsp;picture = <span style="color: #006699;">createImage</span>(<span style="color: #D94A7A;">width</span>,<span style="color: #D94A7A;">height</span>,<span style="color: #718A62;">RGB</span>);
 &nbsp;&nbsp;picture&nbsp;=&nbsp;generatePicture(picture);
 }
 
@@ -181,4 +182,11 @@ Black Body Radiation (colours of stars)
 The Visible Spectrum
 : ![visspec](assets/visspec.png)
 
+<section class="alert processing">
 {% include sketch.html sketch="mandelbrot_set_colour" %}
+{% include mandelbrot_set_colour.html %}
+</section>
+
+<section class="alert processing">
+{% include sketch.html sketch="noise" %}
+</section>
