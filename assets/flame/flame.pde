@@ -4,7 +4,8 @@ color generatePixel(int x, int y, int w, int h)
   float u = map(x, 0, w, -2, 2);
   float v = map(y, 0, h, 1, 0);
   float f = frameCount*0.05;
-  float q = lerp(-1,1, noise(u/2,v*2-f,f));
+  float t = abs(lerp(-1, 1, noise(u, v*3-f, f)));
+  float q = lerp(-1, 1, t);
   float p = (1-v)*(exp(-sq(u*2+q)));
   int n = int(p*(palette.width));
   return palette.pixels[n];

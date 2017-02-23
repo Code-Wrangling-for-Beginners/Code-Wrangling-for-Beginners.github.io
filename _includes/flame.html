@@ -4,7 +4,8 @@
 &nbsp;&nbsp;<span style="color: #E2661A;">float</span> u = <span style="color: #006699;">map</span>(x, 0, w, -2, 2);
 &nbsp;&nbsp;<span style="color: #E2661A;">float</span> v = <span style="color: #006699;">map</span>(y, 0, h, 1, 0);
 &nbsp;&nbsp;<span style="color: #E2661A;">float</span> f = <span style="color: #D94A7A;">frameCount</span>*0.05;
-&nbsp;&nbsp;<span style="color: #E2661A;">float</span> q = <span style="color: #006699;">lerp</span>(-1,1, <span style="color: #006699;">noise</span>(u/2,v*2-f,f));
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> t = <span style="color: #006699;">abs</span>(<span style="color: #006699;">lerp</span>(-1, 1, <span style="color: #006699;">noise</span>(u, v*3-f, f)));
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> q = <span style="color: #006699;">lerp</span>(-1, 1, t);
 &nbsp;&nbsp;<span style="color: #E2661A;">float</span> p = (1-v)*(<span style="color: #006699;">exp</span>(-<span style="color: #006699;">sq</span>(u*2+q)));
 &nbsp;&nbsp;<span style="color: #E2661A;">int</span> n = <span style="color: #006699;">int</span>(p*(palette.<span style="color: #D94A7A;">width</span>));
 &nbsp;&nbsp;<span style="color: #33997E;">return</span> palette.<span style="color: #D94A7A;">pixels</span>[n];
