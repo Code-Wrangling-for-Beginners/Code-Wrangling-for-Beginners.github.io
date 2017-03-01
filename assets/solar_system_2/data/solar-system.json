@@ -1,0 +1,178 @@
+[
+{
+"Name" : "Mercury",
+"Symbol": "☿",
+"Aphelion" : 0.466697 ,
+"Perihelion"	: 0.307499,
+"Semi-major axis" : 0.387098,
+"Eccentricity"	: 0.205630,
+"Orbital period" : 87.969,
+"Mean radius": 2439.7,
+"Mass" :	3.3011E+23
+},
+{
+"Name": "Venus",
+"Symbol" : "♀",
+"Aphelion": 0.728213,
+"Perihelion"	: 0.718440,
+"Semi-major axis" : 0.723332,
+"Eccentricity" :	0.006772,
+"Orbital period" : 224.701,
+"Mean radius" : 6051.8,
+"Mass" : 4.8675E+24
+},
+{
+"Name" : "Earth" ,
+"Symbol" : "🜨",
+"Aphelion" : 1.01673,
+"Perihelion"	: 0.9832687,
+"Semi-major axis" : 1.000001018,
+"Eccentricity"	: 0.0167086,
+"Orbital period" : 365.256363004,
+"Mean radius" : 	6371.0,
+"Mass" : 	5.97237E+24
+},
+{
+"Name" : "Mars",
+"Symbol" : "♂",
+"Aphelion" : 1.6660,
+"Perihelion" : 1.3814,
+"Semi-major axis" : 1.523679,
+"Eccentricity":	0.0934,
+"Orbital period" :  686.971,
+"Mean radius" : 	3389.5,
+"Mass" : 	6.4171E+23
+},
+{
+"Name" : "Jupiter",
+"Symbol" : "♃",
+"Aphelion" :	5.45492,
+"Perihelion" :	4.95029,
+"Semi-major axis" : 5.20260,
+"Eccentricity"	: 0.048498,
+"Orbital period" : 4332.59,
+"Mean radius" : 	69911,
+"Mass" : 	1.8986E+27
+},
+{
+"Name" : "Saturn",
+"Symbol" : "♄",
+"Aphelion"	: 10.086,
+"Perihelion":	9.024,
+"Semi-major axis": 9.5549,
+"Eccentricity"	:0.05555,
+"Orbital period" : 10759.22,
+"Mean radius" : 	58232,
+"Mass" : 	5.6836E+26
+},
+{
+"Name" : "Uranus",
+"Symbol" : "⛢",
+"Aphelion":	20.11,
+"Perihelion":	18.33,
+"Semi-major axis" :19.2184,
+"Eccentricity"	:0.046381,
+"Orbital period" : 30688.5,
+"Mean radius" : 	25362,
+"Mass" : 	8.6810E+25
+},
+{
+"Name" : "Neptune",
+"Symbol" : "♆",
+"Aphelion"	: 30.33,
+"Perihelion":	29.81,
+"Semi-major axis" :30.110387 ,
+"Eccentricity"	: 0.009456,
+"Orbital period" :  60182,
+"Mean radius" : 	24622,
+"Mass" : 	1.0243E+26
+},
+{
+"Name":  "Pluto",
+"Symbol" : "♇",
+"Aphelion":	49.305,
+"Perihelion":	29.658,
+"Semi-major axis" :39.48,
+"Eccentricity"	:0.2488,
+"Orbital period" : 90560,
+"Mean radius" : 	1187,
+"Mass"	: 	1.303E+22
+},
+{
+"Name" : "Halley's Comet",
+"Symbol" : "",
+"Aphelion"	:35.08,
+"Perihelion":	0.586,
+"Semi-major axis": 17.83,
+"Eccentricity":	0.967,
+"Orbital period" :27509.17,
+"Mean radius" : 11 ,
+"Mass" : 	2.2E+14
+},
+{
+"Name" : "Haumea",
+"Symbol" : "",
+"Aphelion":	51.483,
+"Perihelion":	34.952,
+"Semi-major axis": 43.218,
+"Eccentricity":	0.19126,
+"Orbital period" : 103774,
+"Mean radius" : 650 ,
+"Mass" : 	4.006E+21
+},
+{
+"Name" : "Makemake",
+"Symbol" : "",
+"Aphelion"	: 52.840,
+"Perihelion":	38.590,
+"Semi-major axis": 45.715,
+"Eccentricity"	: 0.15586,
+"Orbital period" :  112897,
+"Mean radius" :715,
+"Mass" : 4.4E+21
+},
+{
+"Name" : "Eris" ,
+"Symbol" : "",
+"Aphelion":	97.651,
+"Perihelion":	37.911,
+"Semi-major axis": 67.781,
+"Eccentricity":	0.44068,
+"Orbital period" :203830,
+"Mean radius" : 1163,
+"Mass" : 1.66E+22
+},
+{
+"Name" : "Ceres",
+"Symbol" : "⚳",
+"Aphelion":	2.9773,
+"Perihelion":	2.5577,
+"Semi-major axis": 2.7675,
+"Eccentricity":	0.075823,
+"Orbital period":  1681.63,
+"Mean radius": 473,
+"Mass":	 9.393E+20
+},
+{
+"Name": "Pallas"	,
+"Symbol": "⚴",
+"Aphelion":	3.412605509,
+"Perihelion":	2.13060671,
+"Semi-major axis": 2.77160611,
+"Eccentricity":	0.23127363,
+"Orbital period" : 1685.371678,
+"Mean radius": 512,
+"Mass"	:2.11E+20
+},
+{
+"Name": "Juno",
+"Symbol": "⚵",
+"Aphelion":	3.35293,
+"Perihelion":	1.98847,
+"Semi-major axis": 2.67070,
+"Eccentricity":	0.25545,
+"Orbital period": 1594.18,
+"Mean radius": 233,
+"Mass":	2.67E+19
+}
+]

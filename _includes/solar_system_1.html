@@ -1,0 +1,18 @@
+<html><body><pre>
+<span style="color: #006699;">size</span>(500,320);
+<span style="color: #006699;">rectMode</span>(<span style="color: #718A62;">CORNERS</span>);
+
+<span style="color: #E2661A;">JSONArray</span> planets = <span style="color: #006699;">loadJSONArray</span>(<span style="color: #7D4793;">&quot;solar-system.json&quot;</span>);
+
+<span style="color: #669900;">for</span>(<span style="color: #E2661A;">int</span> i=0 ; i&lt;planets.<span style="color: #006699;">size</span>() ; i++) {
+&nbsp;&nbsp;<span style="color: #E2661A;">JSONObject</span> planet = planets.<span style="color: #006699;">getJSONObject</span>(i);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> aphelion = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Aphelion&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> perihelion = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Perihelion&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> min = <span style="color: #006699;">map</span>(aphelion, 0, 100, 0,<span style="color: #D94A7A;">width</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> max = <span style="color: #006699;">map</span>(perihelion, 0, 100, 0,<span style="color: #D94A7A;">width</span>);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(min, i*20,  max, (i+1)*20-2);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(planet.<span style="color: #006699;">getString</span>(<span style="color: #7D4793;">&quot;Name&quot;</span>), (min+max)/2, i*20+10);
+}
+</pre></body></html>

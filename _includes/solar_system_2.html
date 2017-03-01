@@ -1,0 +1,31 @@
+<html><body><pre>
+<span style="color: #006699;">size</span>(1000, 1000);
+<span style="color: #006699;">rectMode</span>(<span style="color: #718A62;">CORNERS</span>);
+<span style="color: #006699;">ellipseMode</span>(<span style="color: #718A62;">RADIUS</span>);
+
+<span style="color: #006699;">translate</span>(<span style="color: #D94A7A;">width</span>/2, <span style="color: #D94A7A;">height</span>/2);
+
+<span style="color: #E2661A;">JSONArray</span> planets = <span style="color: #006699;">loadJSONArray</span>(<span style="color: #7D4793;">&quot;solar-system.json&quot;</span>);
+
+<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> i=0; i&lt;planets.<span style="color: #006699;">size</span>(); i++) {
+&nbsp;&nbsp;<span style="color: #E2661A;">JSONObject</span> planet = planets.<span style="color: #006699;">getJSONObject</span>(i);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> aphelion = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Aphelion&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> perihelion = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Perihelion&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> e = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Eccentricity&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> a = planet.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Semi-major axis&quot;</span> );
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> b = a*<span style="color: #006699;">sqrt</span>(1-e*e);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> x = a-perihelion;
+
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #666666;">/* multiply by 5 instead of scale(5)</span>
+<span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scale(5)&nbsp;also&nbsp;scales&nbsp;the&nbsp;line&nbsp;width&nbsp;and&nbsp;text&nbsp;size</span>
+<span style="color: #666666;">&nbsp;&nbsp;*/</span>
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #006699;">noFill</span>();
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(x*5, 0, a*5, b*5);
+
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255,0,0);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(planet.<span style="color: #006699;">getString</span>(<span style="color: #7D4793;">&quot;Symbol&quot;</span>), aphelion*5,0);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(planet.<span style="color: #006699;">getString</span>(<span style="color: #7D4793;">&quot;Name&quot;</span>),x*5,b*5);
+}
+</pre></body></html>

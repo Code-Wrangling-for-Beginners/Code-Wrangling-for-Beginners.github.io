@@ -1,0 +1,53 @@
+<html><body><pre>
+<span style="color: #E2661A;">String</span> lines[] ;
+<span style="color: #E2661A;">IntDict</span> frequency ;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(1200, 800);
+
+&nbsp;&nbsp;lines&nbsp;=&nbsp;<span style="color: #006699;">loadStrings</span>(<span style="color: #7D4793;">&quot;sample.txt&quot;</span>);
+&nbsp;&nbsp;frequency&nbsp;=&nbsp;<span style="color: #33997E;">new</span> IntDict();
+
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">String</span> s : lines) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">String</span> words[] = <span style="color: #006699;">splitTokens</span>(s, <span style="color: #7D4793;">&quot;&apos;\&quot;() \t,.;:&quot;</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">String</span> w : words) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> ( frequency.<span style="color: #006699;">hasKey</span>(w) ) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency.<span style="color: #006699;">increment</span>(w);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span style="color: #669900;">else</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency.<span style="color: #006699;">set</span>(w, 1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #006699;">noLoop</span>();
+}
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;histogram(0);
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #666666;">/* most frequent */</span>
+&nbsp;&nbsp;frequency.<span style="color: #006699;">sortValuesReverse</span>();
+&nbsp;&nbsp;histogram(400);
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span style="color: #666666;">/* alphabetical */</span>
+&nbsp;&nbsp;frequency.<span style="color: #006699;">sortKeys</span>();
+&nbsp;&nbsp;histogram(800);
+}
+
+<span style="color: #33997E;">void</span> histogram(<span style="color: #E2661A;">int</span> x)
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">String</span> keys[] = frequency.<span style="color: #006699;">keyArray</span>();
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> g=x+100; g&lt;(x+350); g+=10) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(150);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">line</span>(g, 0, g, <span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> k=0; k&lt;keys.<span style="color: #33997E;">length</span>; k++) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(0);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(0);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">text</span>(keys[k], x+2, 10+10*k);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">rect</span>(x+100, 10*k, 10*frequency.<span style="color: #006699;">get</span>(keys[k]), 8);
+&nbsp;&nbsp;}
+}
+</pre></body></html>

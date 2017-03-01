@@ -32,3 +32,13 @@ section {
 code {
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+dt {
+    float: left ;
+    clear: left ;
+    text-align: right;
+    font-weight: bold;
+    width:  8em;
+    margin-right: 1em;
+}
+dt::after { content: ": "; }
