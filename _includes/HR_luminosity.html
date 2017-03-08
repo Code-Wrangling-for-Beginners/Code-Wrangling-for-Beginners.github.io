@@ -1,0 +1,15 @@
+<html><body><pre>
+<span style="color: #006699;">size</span>(300,300);
+<span style="color: #E2661A;">Table</span> stars = <span style="color: #006699;">loadTable</span>(<span style="color: #7D4793;">&quot;HIP_star.dat&quot;</span>, <span style="color: #7D4793;">&quot;header, tsv&quot;</span>);
+
+<span style="color: #669900;">for</span> (<span style="color: #E2661A;">TableRow</span> s : stars.<span style="color: #006699;">rows</span>() ) {
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> Vmag = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Vmag&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> B_V  = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;B-V&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> Plx  = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Plx&quot;</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> logL = (15 - Vmag - 5*<span style="color: #006699;">log</span>(Plx)/<span style="color: #006699;">log</span>(10))/2.5;
+&nbsp;&nbsp;<span style="color: #669900;">if</span> ( <span style="color: #E2661A;">Float</span>.isNaN(B_V) ) <span style="color: #33997E;">continue</span>;
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> x = <span style="color: #006699;">map</span>(B_V, -0.5, 2.5, 0, <span style="color: #D94A7A;">width</span>);
+&nbsp;&nbsp;<span style="color: #E2661A;">float</span> y = <span style="color: #006699;">map</span>(logL, -2.5, 4, <span style="color: #D94A7A;">height</span>, 0);
+&nbsp;&nbsp;<span style="color: #006699;">point</span>(x, y);
+}
+</pre></body></html>

@@ -1,0 +1,11 @@
+<html><body><pre>
+<span style="color: #E2661A;">color</span> BVlookup(<span style="color: #E2661A;">float</span> bv)
+{
+&nbsp;&nbsp;<span style="color: #E2661A;">String</span> rgb = <span style="color: #7D4793;">&quot;&quot;</span>;
+&nbsp;&nbsp;<span style="color: #669900;">for</span>(<span style="color: #E2661A;">TableRow</span> bvc : BVcolours.<span style="color: #006699;">rows</span>() ) {
+&nbsp;&nbsp;&nbsp;&nbsp;rgb&nbsp;=&nbsp;bvc.<span style="color: #006699;">getString</span>(<span style="color: #7D4793;">&quot;rgb&quot;</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span>( bv&lt; bvc.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;B-V&quot;</span>) ) <span style="color: #33997E;">break</span>;
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #33997E;">return</span> colour(rgb);
+}
+</pre></body></html>

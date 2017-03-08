@@ -25,5 +25,5 @@ for (int i=0; i<planets.size(); i++) {
 
   fill(255,0,0);
   text(planet.getString("Symbol"), aphelion*5,0);
-  text(planet.getString("Name"),x,b);
+  text(planet.getString("Name"),x*5,b*5);
 }

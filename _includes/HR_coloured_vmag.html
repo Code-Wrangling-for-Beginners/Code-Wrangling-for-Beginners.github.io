@@ -1,0 +1,19 @@
+<html><body><pre>
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()
+{
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(0);
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">TableRow</span> s : stars.<span style="color: #006699;">rows</span>() ) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> Vmag = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Vmag&quot;</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> B_V  = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;B-V&quot;</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> Plx  = s.<span style="color: #006699;">getFloat</span>(<span style="color: #7D4793;">&quot;Plx&quot;</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> logL = (15 - Vmag - 5*log10(Plx))/2.5;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> ( <span style="color: #E2661A;">Float</span>.isNaN(B_V) ) <span style="color: #33997E;">continue</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> x = <span style="color: #006699;">map</span>(B_V, -0.5, 2.5, 0, <span style="color: #D94A7A;">width</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> y = <span style="color: #006699;">map</span>(logL, -2.5, 4, <span style="color: #D94A7A;">height</span>, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> br = Vmag/3;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>( BVlookup( B_V ) );
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(x, y, br,br);
+&nbsp;&nbsp;}
+}
+</pre></body></html>
