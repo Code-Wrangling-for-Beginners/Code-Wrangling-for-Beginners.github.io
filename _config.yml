@@ -28,8 +28,6 @@ kramdown:
     parse_block_html: true
 
 theme: minima
-gems:
-  - jekyll-textile-converter
 exclude:
   - Gemfile
   - Gemfile.lock
